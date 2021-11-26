@@ -5,6 +5,7 @@ namespace Digitcode\Bwallet;
 use Digitcode\Bwallet\Handlers\CheckBalance;
 use Digitcode\Bwallet\Handlers\CheckBill;
 use Digitcode\Bwallet\Handlers\CheckStatusBill;
+use Digitcode\Bwallet\Handlers\CreateSession;
 use Digitcode\Bwallet\Handlers\Deposit;
 use Digitcode\Bwallet\Handlers\InquiryPLN;
 use Digitcode\Bwallet\Handlers\PayBill;
@@ -30,6 +31,14 @@ class BwalletWrapper {
     public function checkBalance()
     {
         return (new CheckBalance($this->client))->perform();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function create_session($phone, $password)
+    {
+        return (new CreateSession($this->client, $phone, $password))->perform();
     }
 
     /**
