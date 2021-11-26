@@ -10,6 +10,7 @@ return [
     'pin'       => env('PIN'),
     'ip'        => env('IP'),
     'key'       => env('KEY'),
+    'call_back' => env('CALL_BACK'),
 
     /*
     * bwallet Base URL
